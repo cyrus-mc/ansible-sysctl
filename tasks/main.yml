@@ -1,0 +1,10 @@
+- sysctl:
+    name: "{{ item.key }}"
+    value: "{{ item.value.value }}"
+    state: "{{ item.value.state }}"
+  with_dict: "{{ sysctl }}"
+  #    include_vars: "{{ value }}"
+  #  with_first_round:
+  #    - "{{ ansible_local.k8s_facts.labels.role }}.yml"
+  #  tags: vars
+
