@@ -1,8 +1,8 @@
 - name: Load a variable file based on fact k8s_facts.labels.role, or default if not found
   include_vars: "{{ item }}"
   with_first_found:
-    - "{{ ansible_local.k8s_facts.labels.role }}.yml"
-    - "default.yml"
+  - "{{ ansible_local.k8s_facts.labels.role }}.yml"
+  - "default.yml"
 
 - sysctl:
     name: "{{ item.key }}"
